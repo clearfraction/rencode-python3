@@ -6,6 +6,8 @@ Summary: A Module similar to bencode from the BitTorrent project
 License: GPLv3
 URL: https://github.com/aresch/rencode
 Source0: https://github.com/aresch/rencode/archive/v1.0.6.tar.gz
+Patch0: ffc40a7d3fb9f7007eb93abf98949aa752a7ffae.patch
+Patch1: 5c928f14567fabc9efb8bbb8ac5e0eef03c61541.patch
 
 BuildRequires: python3-dev
 BuildRequires: pip
@@ -18,6 +20,9 @@ complex, heterogeneous data structures with many small elements
 
 %prep
 %setup -n rencode-1.0.6
+
+%patch0 -p1
+%patch1 -p1
 
 %build
 

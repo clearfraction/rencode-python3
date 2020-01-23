@@ -1,0 +1,29 @@
+From ffc40a7d3fb9f7007eb93abf98949aa752a7ffae Mon Sep 17 00:00:00 2001
+From: jonathanunderwood <jonathan.underwood@gmail.com>
+Date: Sun, 4 Nov 2018 16:27:12 +0000
+Subject: [PATCH] Rename rencode.pyx to _rencode.pyx to fix Cython 0.27 builds
+ (#24)
+
+---
+ rencode/{rencode.pyx => _rencode.pyx} | 0
+ setup.py                              | 2 +-
+ 2 files changed, 1 insertion(+), 1 deletion(-)
+ rename rencode/{rencode.pyx => _rencode.pyx} (100%)
+
+diff --git a/rencode/rencode.pyx b/rencode/_rencode.pyx
+similarity index 100%
+rename from rencode/rencode.pyx
+rename to rencode/_rencode.pyx
+diff --git a/setup.py b/setup.py
+index dcbd5dc..023df09 100644
+--- a/setup.py
++++ b/setup.py
+@@ -42,7 +42,7 @@
+     Extension(
+         "rencode._rencode",
+         extra_compile_args=["-O3"],
+-        sources=["rencode/rencode" + source_ext],
++        sources=["rencode/_rencode" + source_ext],
+     ),
+ ]
+ 

@@ -1,0 +1,22 @@
+From 5c928f14567fabc9efb8bbb8ac5e0eef03c61541 Mon Sep 17 00:00:00 2001
+From: jonathanunderwood <jonathan.underwood@gmail.com>
+Date: Sun, 4 Nov 2018 16:28:24 +0000
+Subject: [PATCH] Include pyx file (#25)
+
+* Rename rencode.pyx to _rencode.pyx to fix Cython 0.27 builds
+
+* Add .pyx file to MANIFEST so it is shipped in sdist
+---
+ MANIFEST.in | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/MANIFEST.in b/MANIFEST.in
+index c8cedbf..f542827 100644
+--- a/MANIFEST.in
++++ b/MANIFEST.in
+@@ -2,3 +2,4 @@ include COPYING
+ include README.md
+ include tests/*.py
+ include rencode/rencode.c
++include rencode/_rencode.pyx
+\ No newline at end of file
