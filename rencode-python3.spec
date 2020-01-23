@@ -29,7 +29,14 @@ complex, heterogeneous data structures with many small elements
 unset http_proxy
 unset no_proxy 
 unset https_proxy
-
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1572997294
+export GCC_IGNORE_WERROR=1
+export CFLAGS="$CFLAGS -fno-lto "
+export FCFLAGS="$CFLAGS -fno-lto "
+export FFLAGS="$CFLAGS -fno-lto "
+export CXXFLAGS="$CXXFLAGS -fno-lto "
+export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
 
 %install
